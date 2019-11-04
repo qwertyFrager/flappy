@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'flappyBird';
+    src: url('../fonts/8663.ttf');
+}
+@font-face {
+    font-family: 'flappyBirdMenu';
+    src: url('../fonts/FlappyBirdy.ttf');
+}
+.menu{
+    width: 288px;
+    height: 512px;
+    background-image: url("../img/fg.png"),url("../img/bird-bg.png");
+    background-position: bottom left,top left;
+    background-repeat: no-repeat,no-repeat;
+}
+.top-right-icon{
+    float: right;
+    margin: 5px 5px 0 0;
+}
+.FlappyBird{
+    font-family: 'flappyBirdMenu';
+    font-size: 65px;
+    color: #fff;
+    text-align: center;
+    padding-top: 45px;
+}
+.play{
+    text-align: center;
+}
+.settings-menu{
+    text-align: center;
+}
+.difficult{
+    margin: 20px auto;
+}
+#canvas{
+    display: none;
+}
+#close-settings{
+    display: none;
+}
+#difficult{
+    display: none;
+}

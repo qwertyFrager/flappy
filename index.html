@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="game">
+    <div class="menu" id="menu">
+        <div class="top-right-icon" id="settings">
+            <img src="img/settings.png"/>
+        </div>
+        <div class="top-right-icon" id="close-settings">
+            <img src="img/close-icon.png"/>
+        </div>
+        <div class="FlappyBird">FlappyBird</div>
+        <div class="play" id="playBtn">
+            <img src="img/play.png"/>
+        </div>
+        <div class="settings-menu">
+            <select class="difficult" id="difficult">
+                <option value="3">Nightmare</option>
+                <option value="2">Hard</option>
+                <option value="1">Easy</option>
+            </select>
+        </div>
+    </div>
+    <canvas id="canvas" width="288" height="512"></canvas>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
