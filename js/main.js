@@ -316,6 +316,11 @@ function startGame() {
                 fly.play();
             }}
     });
+    document.addEventListener("touchstart", function (event) {
+        flyScore = 20;
+        fly.play();
+    });
+
     document.addEventListener("keyup", function (event) {
         if (points===bossPoint){
             if (event.code==='Space') {
