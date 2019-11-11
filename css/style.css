@@ -19,25 +19,34 @@ body{
     max-width: 1920px;
 }
 .game-name{
-    color: white;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 5px darkgreen solid;
+    background-color: white;
+    color: green;
     font-family: 'flappyBird';
     font-size: 80px;
     text-align: center;
     margin-top: 100px;
 }
-.controls{
-    float: right;
+.myBTN{
+    padding: 30px;
+    margin-top: 100px;
+    border-radius: 20px;
+    border: 5px solid darkgreen;
+    background-color: white;
+    text-align: center;
     font-family: 'flappyBird';
-    color: white;
-    font-size: 50px;
-    margin-right: 100px;
+    color: green;
+    font-size: 70px;
 }
 .header{
     text-align: center;
 }
 .game{
-    border: 5px red solid;
-    margin: 0 auto;
+    border: 5px darkgreen solid;
+    margin: 200px auto 0;
     width: 298px;
 }
 .menu{
@@ -77,18 +86,18 @@ body{
     display: none;
 }
 .animation-box{
+    margin-left: 50px;
     text-align: center;
     margin-top: 200px;
-
+    animation: ani 3s linear infinite;
 }
 .bird-animation{
     margin: 0 auto;
     width: 300px;
     height: 150px;
-    animation: ani1 2s linear infinite;
-    transiton:1s;
+    animation: bird-ani 2s linear infinite;
 }
-@keyframes ani1{
+@keyframes bird-ani{
     0%{
         padding-top: 10px;
     }
@@ -97,5 +106,16 @@ body{
     }
     100%{
         padding-top: 10px;
+    }
+}
+@keyframes ani{
+    0%{
+        transform: scale(1.5);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.5);
     }
 }
