@@ -6,6 +6,40 @@
     font-family: 'flappyBirdMenu';
     src: url('../fonts/FlappyBirdy.ttf');
 }
+body{
+    background-color: green;
+    touch-action: manipulation;
+}
+.boss{
+    float: right;
+    margin-top: 200px;
+    margin-right: 300px;
+}
+.container{
+    max-width: 1920px;
+}
+.game-name{
+    color: white;
+    font-family: 'flappyBird';
+    font-size: 80px;
+    text-align: center;
+    margin-top: 100px;
+}
+.controls{
+    float: right;
+    font-family: 'flappyBird';
+    color: white;
+    font-size: 50px;
+    margin-right: 100px;
+}
+.header{
+    text-align: center;
+}
+.game{
+    border: 5px red solid;
+    margin: 0 auto;
+    width: 298px;
+}
 .menu{
     width: 288px;
     height: 512px;
@@ -41,4 +75,27 @@
 }
 #difficult{
     display: none;
+}
+.animation-box{
+    text-align: center;
+    margin-top: 200px;
+
+}
+.bird-animation{
+    margin: 0 auto;
+    width: 300px;
+    height: 150px;
+    animation: ani1 2s linear infinite;
+    transiton:1s;
+}
+@keyframes ani1{
+    0%{
+        padding-top: 10px;
+    }
+    50%{
+        padding-top: 90px;
+    }
+    100%{
+        padding-top: 10px;
+    }
 }

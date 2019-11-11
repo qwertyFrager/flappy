@@ -2,35 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="css/style.css" rel="stylesheet">
+    <title>myBIRD</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="game">
-    <div class="menu" id="menu">
-        <div class="top-right-icon" id="settings">
-            <img src="img/settings.png"/>
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="game-name">
+                Flappy Bird
+            </div>
+            <div class="animation-box">
+                <div class="pipe-top">
+                    <img src="img/pipe-top-ani.png"/>
+                </div>
+                <div class="bird-animation">
+                    <img src="img/birdy.png"/>
+                </div>
+                <div class="pipe-bottom">
+                    <img src="img/pipe-bottom-ani.png"/>
+                </div>
+            </div>
         </div>
-        <div class="top-right-icon" id="close-settings">
-            <img src="img/close-icon.png"/>
+        <div class="col-md">
+            <div class="game">
+                <div class="menu" id="menu">
+                    <div class="top-right-icon" id="settings">
+                        <img src="img/settings.png"/>
+                    </div>
+                    <div class="top-right-icon" id="close-settings">
+                        <img src="img/close-icon.png"/>
+                    </div>
+                    <div class="FlappyBird">FlappyBird</div>
+                    <div class="play" id="playBtn">
+                        <img src="img/play.png"/>
+                    </div>
+                    <div class="settings-menu">
+                        <select class="difficult" id="difficult">
+                            <option value="3">Nightmare</option>
+                            <option value="2">Hard</option>
+                            <option value="1">Easy</option>
+                        </select>
+                    </div>
+                </div>
+                <canvas id="canvas" width="288" height="512"></canvas>
+            </div>
         </div>
-        <div class="FlappyBird">FlappyBird</div>
-        <div class="play" id="playBtn">
-            <img src="img/play.png"/>
-        </div>
-        <div class="settings-menu">
-            <select class="difficult" id="difficult">
-                <option value="3">Nightmare</option>
-                <option value="2">Hard</option>
-                <option value="1">Easy</option>
-            </select>
+        <div class="col-md">
+            privet
         </div>
     </div>
-    <canvas id="canvas" width="288" height="512"></canvas>
 </div>
 <script src="js/main.js"></script>
 </body>
