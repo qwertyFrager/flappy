@@ -262,46 +262,51 @@ function startGame() {
 
         }
     }
+
+    function restart(){
+        targetLevel=-10;
+        attackManager=1;
+
+        ctx.fillStyle = '#fff';
+        bossBalls=[];
+        balls=[];
+        select = document.getElementById('difficult');
+        level = parseInt(select.options[select.selectedIndex].value);
+        points = '0';
+        showText=true;
+
+        birdCh = {
+            img: bird,
+            x: cnv.width / 2 - bird.width / 2,
+            y: (cnv.height - fg.height) / 2 - bird.height / 2
+        };
+        bossCh={
+            img: boss,
+            x: cnv.width,
+            y: (cnv.height-fg.height)/2-boss.height,
+            hp: 100
+        };
+        run = true;
+        pipes = [{
+            x:cnv.width,
+            y:getPipeY()
+        },{
+            x:cnv.width + 200,
+            y:getPipeY()
+        }];
+        coins = [{
+            x: pipes[0].x + pipeTop.width / 2 - coin.width / 2,
+            y: pipes[0].y + pipeTop.height + hole / 2 - coin.height / 2
+        },{
+            x: pipes[1].x + pipeTop.width / 2 - coin.width / 2,
+            y: pipes[1].y + pipeTop.height + hole / 2 - coin.height / 2
+        }];
+        draw();
+    }
+
     document.addEventListener("keydown", function (event) {
         if (event.code==='KeyR' && !run){
-            targetLevel=-10;
-            attackManager=1;
-
-            ctx.fillStyle = '#fff';
-            bossBalls=[];
-            balls=[];
-            select = document.getElementById('difficult');
-            level = parseInt(select.options[select.selectedIndex].value);
-            points = '0';
-            showText=true;
-
-            birdCh = {
-                img: bird,
-                x: cnv.width / 2 - bird.width / 2,
-                y: (cnv.height - fg.height) / 2 - bird.height / 2
-            };
-            bossCh={
-                img: boss,
-                x: cnv.width,
-                y: (cnv.height-fg.height)/2-boss.height,
-                hp: 100
-            };
-            run = true;
-            pipes = [{
-                x:cnv.width,
-                y:getPipeY()
-            },{
-                x:cnv.width + 200,
-                y:getPipeY()
-            }];
-            coins = [{
-                x: pipes[0].x + pipeTop.width / 2 - coin.width / 2,
-                y: pipes[0].y + pipeTop.height + hole / 2 - coin.height / 2
-            },{
-                x: pipes[1].x + pipeTop.width / 2 - coin.width / 2,
-                y: pipes[1].y + pipeTop.height + hole / 2 - coin.height / 2
-            }];
-           draw();
+            restart();
         }
         if (points===bossPoint){
             if (event.code==='ArrowDown'){
@@ -316,10 +321,6 @@ function startGame() {
                 fly.play();
             }}
     });
-    document.addEventListener("touchstart", function (event) {
-        flyScore = 20;
-        fly.play();
-    });
 
     document.addEventListener("keyup", function (event) {
         if (points===bossPoint){
@@ -332,6 +333,22 @@ function startGame() {
             }
         }
     });
+
+    document.addEventListener("touchstart", function (event) {
+        flyScore = 20;
+        fly.play();
+        if (points===bossPoint){
+            if(balls.length===0 || balls[balls.length-1].x>birdCh.x+bird.width/2+10){
+                balls.push({
+                    x: birdCh.x+bird.width/2,
+                    y: birdCh.y+bird.height/2-ball.height/2
+                })}
+        }
+        if (!run){
+            restart();
+        }
+    });
+
     draw();
 }
 
