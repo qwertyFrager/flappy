@@ -6,9 +6,20 @@
     font-family: 'flappyBirdMenu';
     src: url('../fonts/FlappyBirdy.ttf');
 }
+@font-face {
+    font-family: 'howToPlay';
+    src: url('../fonts/18536.ttf');
+}
 body{
     background-color: green;
     touch-action: manipulation;
+}
+a:hover{
+    text-decoration: none;
+}
+a {
+    color: red !important;
+    text-decoration: none;
 }
 .boss{
     float: right;
@@ -26,7 +37,7 @@ body{
     background-color: white;
     color: green;
     font-family: 'flappyBird';
-    font-size: 80px;
+    font-size: 50px;
     text-align: center;
     margin-top: 100px;
 }
@@ -40,6 +51,12 @@ body{
     font-family: 'flappyBird';
     color: green;
     font-size: 70px;
+    transition: 1s;
+}
+.myBTN:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 1s;
 }
 .header{
     text-align: center;
@@ -118,4 +135,26 @@ body{
     100%{
         transform: scale(1.5);
     }
+}
+.howtoplay-title{
+    width: 500px;
+    margin: 30px auto;
+}
+.howtoplay-box{
+    width: 1000px;
+    margin: 0 auto;
+}
+.rules{
+    border-radius: 20px;
+    border: 5px solid darkgreen;
+    background-color: white;
+    font-family: 'howToPlay';
+    color: green;
+    padding: 20px;
+    font-size: 60px;
+    height: 600px;
+}
+.rules-header{
+    text-align: center;
+    font-weight: 900;
 }

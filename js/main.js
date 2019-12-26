@@ -1,6 +1,15 @@
 const hole = 100;
 const bossPoint = 50;
 
+document.onkeydown = function(e) {
+    e = e || window.event;
+    var charCode = e.keyCode || e.which;
+    if (charCode === 32 || charCode === 38 || charCode === 40) {
+        e.preventDefault();
+        return false;
+    }
+}
+
 let cnv = document.getElementById('canvas');
 let playBtn = document.getElementById('playBtn');
 let settings = document.getElementById('settings');
